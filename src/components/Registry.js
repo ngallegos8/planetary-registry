@@ -13,7 +13,15 @@ function Registry({ planets, setPlanets }) {
         setPlanets([...planets, newPlanet])
       }
 
-      const displayedPlanets = planets.filter((planets) => planets.name.toLowerCase().includes(search.toLowerCase()))
+    //   const displayedPlanets = planets.filter((planets) => planets.name.toLowerCase().includes(search.toLowerCase()))
+
+    //    ALLOWS SEARCH FUNCTION TO SEARCH FOR ANYTHING IN THE PLANET OBJECT
+      const displayedPlanets = planets.filter((planet) => {
+        return planet.name.toLowerCase().includes(search.toLowerCase()) ||
+        planet.climate.toLowerCase().includes(search.toLowerCase()) ||
+        planet.terrain.toLowerCase().includes(search.toLowerCase()) ||
+        planet.population.toString().includes(search)
+      })
 
     return(
         <div className="registry">

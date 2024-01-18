@@ -30,8 +30,6 @@ function NewPlanetForm({ onNewPlanetFormSubmit }) {
             setPopulation("")
     }
 
-
-
     return(
         <form onSubmit={handleSubmit}>
             <input type="text" name="name" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)}/>
